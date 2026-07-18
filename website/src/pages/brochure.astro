@@ -1,0 +1,623 @@
+---
+import Icon from '../components/Icon.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const hero = `${base}/images/hero-estate.jpg`;
+
+const pillars = [
+  {
+    title: 'Security-first networking',
+    body: 'AI made hacking faster. Everyday routers often have known weak spots. Ubiquiti UniFi is built for control and a cleaner, more secure setup.',
+  },
+  {
+    title: 'Strong whole-home Wi‑Fi',
+    body: 'Dream Machine Pro with U6/U7 access points and mesh where needed — separate networks for family, guests, and smart devices.',
+  },
+  {
+    title: 'Local Home Assistant',
+    body: 'Your own local AI and smart-home brain on a premium mini PC — not locked to Amazon’s cloud.',
+  },
+  {
+    title: 'Private voice',
+    body: 'FutureProofHomes Satellite1 with your own wake word. Keep Alexa or Siri only as a convenience, not the brain.',
+  },
+  {
+    title: 'Cloud-outage proof',
+    body: 'If Amazon has a bad day, essential automations and local voice can keep working on your network.',
+  },
+  {
+    title: 'Premium hardware',
+    body: 'A solid mini PC for Home Assistant — quiet, reliable, and professional. Not a hobbyist Raspberry Pi setup.',
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Printable brochure — Private Home Network for San Antonio. Ubiquiti UniFi + local Home Assistant."
+    />
+    <title>Brochure · Private Home Network</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="screen-bar no-print">
+      <a class="back" href={`${base}/`}>← Back to site</a>
+      <div class="screen-actions">
+        <span>2 sheets · print double-sided · US Letter</span>
+        <button type="button" onclick="window.print()">Print / Save as PDF</button>
+      </div>
+    </div>
+
+    <!-- SHEET 1 FRONT — Cover -->
+    <section class="sheet cover" aria-label="Front cover">
+      <div class="bleed-photo" style={`background-image: url('${hero}')`}></div>
+      <div class="cover-scrim"></div>
+      <div class="cover-inner">
+        <p class="eyebrow light"><Icon name="lock" size={14} /> Private Home Network</p>
+        <h1>Your network.<br />Your local AI.<br />Under your roof.</h1>
+        <p class="cover-lead">
+          A premium San Antonio upgrade to Ubiquiti UniFi and Home Assistant — better Wi‑Fi, more control, and a smart home that doesn’t depend on someone else’s cloud.
+        </p>
+        <div class="cover-meta">
+          <span>San Antonio · Texas Hill Country</span>
+          <span>Pilot typically ~$5,000</span>
+        </div>
+      </div>
+      <p class="sheet-label no-print">Sheet 1 · Front (cover)</p>
+    </section>
+
+    <!-- SHEET 1 BACK — Why this exists -->
+    <section class="sheet inside why" aria-label="Why this exists">
+      <div class="sheet-pad">
+        <header class="sheet-head">
+          <p class="eyebrow"><Icon name="shield" size={14} /> Why this exists</p>
+          <h2>Built for control in an AI-hacking world</h2>
+          <p class="lead">
+            AI has made hacking faster and more efficient. Everyday routers — Linksys and similar — often have known weak spots in how they’re configured. What you want is a system you actually control, built with security first.
+            <strong> Ubiquiti UniFi is that.</strong>
+          </p>
+        </header>
+
+        <div class="pillar-grid">
+          {
+            pillars.map((p) => (
+              <article class="pillar">
+                <h3>{p.title}</h3>
+                <p>{p.body}</p>
+              </article>
+            ))
+          }
+        </div>
+
+        <aside class="pull-quote">
+          <p>
+            We use this gear ourselves — not because it’s trendy, but because it keeps the home’s network and automations under the homeowner’s roof.
+          </p>
+        </aside>
+      </div>
+      <div class="edge-photo" style={`background-image: url('${hero}')`} aria-hidden="true"></div>
+      <p class="sheet-label no-print">Sheet 1 · Back</p>
+    </section>
+
+    <!-- SHEET 2 FRONT — The offer -->
+    <section class="sheet inside offer" aria-label="The pilot offer">
+      <div class="offer-hero" style={`background-image: url('${hero}')`}>
+        <div class="offer-hero-scrim"></div>
+        <div class="offer-hero-copy">
+          <p class="eyebrow light">The pilot</p>
+          <h2>Private Network &amp; Local Smart Home</h2>
+          <p>For homeowners already living in their house — with existing internet, and often Alexa or Siri.</p>
+        </div>
+      </div>
+      <div class="sheet-pad offer-body">
+        <div class="two-col">
+          <div>
+            <h3>What’s included</h3>
+            <ul class="check">
+              <li>Ubiquiti Dream Machine Pro — secure gateway &amp; console; we plan rack / placement</li>
+              <li>Whole-home Wi‑Fi — U6/U7 access points + mesh where needed</li>
+              <li>Secure segmentation — family, guests, and smart devices separated</li>
+              <li>Home Assistant on a premium mini PC — local dashboard for ~20 devices</li>
+              <li>Private voice — FutureProofHomes Satellite1 with your own wake word</li>
+              <li>Optional Alexa / Siri bridge — convenience only, clearly labeled</li>
+              <li>We handle gear, wiring partner if needed, and all configuration</li>
+              <li>Handoff walkthrough so you know how to run it</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Investment</h3>
+            <p class="price">~$5,000</p>
+            <p class="price-note">Typical pilot · usually $4,000–$5,500 based on home size, coverage, and wiring</p>
+            <h3 class="mt">Not decided yet</h3>
+            <p class="muted">Cameras, video doorbell, landline, and extra storage can come later — the UniFi setup is ready for them.</p>
+            <h3 class="mt">How we work</h3>
+            <ol class="steps">
+              <li>Warm intro / walkthrough</li>
+              <li>Confirm scope &amp; price</li>
+              <li>We buy, wire, configure</li>
+              <li>Handoff &amp; training</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <p class="sheet-label no-print">Sheet 2 · Front</p>
+    </section>
+
+    <!-- SHEET 2 BACK — Back cover -->
+    <section class="sheet back-cover" aria-label="Back cover">
+      <div class="back-photo" style={`background-image: url('${hero}')`}></div>
+      <div class="back-scrim"></div>
+      <div class="back-inner">
+        <p class="eyebrow light"><Icon name="mic" size={14} /> What to say in one breath</p>
+        <blockquote>
+          AI has made hacking faster and more efficient — and a lot of consumer routers (like Linksys) have known weak spots. We upgrade your home to Ubiquiti UniFi: a better, more convenient, efficient, and secure setup you actually control. Then we use Home Assistant to create your own local AI and smart-home system, with a private voice speaker and your own wake word. It runs inside your home instead of depending on Amazon or another cloud, so your essential automations can keep working during an internet or cloud outage. The pilot is typically about $5,000, and we handle the equipment, setup, and configuration. Cameras and a video doorbell can be added later once we scope them.
+        </blockquote>
+
+        <div class="back-footer">
+          <div>
+            <strong>Private Home Network</strong>
+            <span>San Antonio · UniFi + Home Assistant</span>
+          </div>
+          <div class="back-cta">
+            <span>Ask your agent for a walkthrough</span>
+            <span class="url">sa-local-home-automation-ubiquiti.netlify.app</span>
+          </div>
+        </div>
+      </div>
+      <p class="sheet-label no-print">Sheet 2 · Back (cover)</p>
+    </section>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --ink: #1a1612;
+    --ink-soft: #3d342c;
+    --paper: #f3eee6;
+    --copper: #a65d2e;
+    --copper-bright: #c4783a;
+    --slate: #2f4a48;
+    --line: rgba(26, 22, 18, 0.12);
+    --font-display: "Fraunces", Georgia, serif;
+    --font-body: "Manrope", "Segoe UI", sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    color: var(--ink);
+    background: #d8d0c4;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 550;
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--copper);
+  }
+
+  .eyebrow.light {
+    color: var(--copper-bright);
+  }
+
+  .screen-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    background: rgba(243, 238, 230, 0.95);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(10px);
+  }
+
+  .screen-bar a {
+    color: var(--slate);
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .screen-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+
+  .screen-actions button {
+    border: none;
+    border-radius: 999px;
+    padding: 0.65rem 1.1rem;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--font-body);
+    font-weight: 650;
+    cursor: pointer;
+  }
+
+  .sheet {
+    position: relative;
+    width: 8.5in;
+    height: 11in;
+    margin: 1rem auto;
+    background: var(--paper);
+    overflow: hidden;
+    box-shadow: 0 18px 50px rgba(26, 22, 18, 0.18);
+  }
+
+  .sheet-label {
+    position: absolute;
+    right: 0.6rem;
+    bottom: 0.4rem;
+    margin: 0;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(26, 22, 18, 0.45);
+  }
+
+  .sheet-pad {
+    padding: 0.7in 0.65in;
+  }
+
+  /* —— Cover —— */
+  .cover {
+    color: #f7f3ec;
+  }
+
+  .bleed-photo,
+  .back-photo {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .cover-scrim,
+  .back-scrim {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(26, 22, 18, 0.28) 0%, rgba(26, 22, 18, 0.55) 42%, rgba(26, 22, 18, 0.9) 100%),
+      linear-gradient(90deg, rgba(26, 22, 18, 0.5), transparent 60%);
+  }
+
+  .cover-inner {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0.75in 0.7in 0.85in;
+  }
+
+  .cover h1 {
+    margin: 0.55rem 0 0.85rem;
+    font-size: 3.15rem;
+    color: #f7f3ec;
+    max-width: 11ch;
+  }
+
+  .cover-lead {
+    margin: 0;
+    max-width: 28rem;
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: rgba(247, 243, 236, 0.9);
+  }
+
+  .cover-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    margin-top: 1.5rem;
+    font-size: 0.88rem;
+    color: rgba(247, 243, 236, 0.78);
+    font-weight: 600;
+  }
+
+  /* —— Why page —— */
+  .why {
+    display: grid;
+    grid-template-columns: 1fr 1.55in;
+  }
+
+  .why .sheet-pad {
+    padding-right: 0.45in;
+  }
+
+  .edge-photo {
+    background-size: cover;
+    background-position: 70% center;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .sheet-head h2 {
+    margin: 0.35rem 0 0.7rem;
+    font-size: 1.85rem;
+  }
+
+  .lead {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .pillar-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.55rem;
+    margin-top: 0.9rem;
+  }
+
+  .pillar {
+    padding: 0.65rem 0.7rem;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .pillar h3 {
+    margin: 0 0 0.3rem;
+    font-size: 0.95rem;
+  }
+
+  .pillar p {
+    margin: 0;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    color: var(--ink-soft);
+  }
+
+  .pull-quote {
+    margin-top: 0.85rem;
+    padding: 0.75rem 0.85rem;
+    border-left: 3px solid var(--copper);
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 0 12px 12px 0;
+  }
+
+  .pull-quote p {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 0.98rem;
+    line-height: 1.4;
+    color: var(--ink-soft);
+  }
+
+  /* —— Offer —— */
+  .offer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .offer-hero {
+    position: relative;
+    height: 2.35in;
+    background-size: cover;
+    background-position: center 40%;
+    color: #f7f3ec;
+  }
+
+  .offer-hero-scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(26, 22, 18, 0.35), rgba(26, 22, 18, 0.78));
+  }
+
+  .offer-hero-copy {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0.55in 0.65in 0.4in;
+  }
+
+  .offer-hero-copy h2 {
+    margin: 0.25rem 0 0.35rem;
+    font-size: 1.7rem;
+    color: #f7f3ec;
+  }
+
+  .offer-hero-copy p {
+    margin: 0;
+    max-width: 34rem;
+    color: rgba(247, 243, 236, 0.88);
+    font-size: 0.9rem;
+  }
+
+  .offer-body {
+    padding-top: 0.45in;
+    padding-bottom: 0.55in;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1.35fr 0.9fr;
+    gap: 0.7in;
+  }
+
+  .two-col h3 {
+    margin: 0 0 0.45rem;
+    font-size: 1.05rem;
+  }
+
+  .two-col h3.mt {
+    margin-top: 0.85rem;
+  }
+
+  .check,
+  .steps {
+    margin: 0;
+    padding-left: 1.05rem;
+    color: var(--ink-soft);
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .check li,
+  .steps li {
+    margin: 0.28rem 0;
+  }
+
+  .price {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    color: var(--slate);
+  }
+
+  .price-note,
+  .muted {
+    margin: 0.35rem 0 0;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+
+  /* —— Back cover —— */
+  .back-cover {
+    color: #f7f3ec;
+  }
+
+  .back-inner {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.75in 0.7in 0.7in;
+  }
+
+  .back-inner blockquote {
+    margin: 1rem 0 0;
+    padding: 0;
+    border: none;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: rgba(247, 243, 236, 0.92);
+    max-width: 36rem;
+  }
+
+  .back-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: flex-end;
+    border-top: 1px solid rgba(247, 243, 236, 0.25);
+    padding-top: 0.85rem;
+  }
+
+  .back-footer strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+  }
+
+  .back-footer span {
+    display: block;
+    font-size: 0.8rem;
+    color: rgba(247, 243, 236, 0.75);
+    margin-top: 0.15rem;
+  }
+
+  .back-cta {
+    text-align: right;
+  }
+
+  .back-cta .url {
+    font-weight: 700;
+    color: var(--copper-bright);
+    margin-top: 0.25rem;
+  }
+
+  @media print {
+    body {
+      background: white;
+    }
+
+    .no-print {
+      display: none !important;
+    }
+
+    .sheet {
+      margin: 0;
+      box-shadow: none;
+      page-break-after: always;
+      break-after: page;
+    }
+
+    .sheet:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
+
+    @page {
+      size: letter;
+      margin: 0;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .sheet {
+      width: min(100% - 1.5rem, 8.5in);
+      height: auto;
+      min-height: 11in;
+    }
+
+    .why {
+      grid-template-columns: 1fr;
+    }
+
+    .edge-photo {
+      min-height: 2.5in;
+      border-left: none;
+      border-top: 1px solid var(--line);
+    }
+
+    .two-col {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+  }
+</style>
