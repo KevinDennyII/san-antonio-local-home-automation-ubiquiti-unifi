@@ -3,6 +3,8 @@ import Icon from '../components/Icon.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const hero = `${base}/images/hero-estate.jpg`;
+const haDash = `${base}/images/dashboards/ha-home-dashboard-overview.png`;
+const unifiDash = `${base}/images/dashboards/unifi-console-dashboard.png`;
 
 const pillars = [
   {
@@ -113,15 +115,33 @@ const pillars = [
 
     <!-- SHEET 2 FRONT — The offer -->
     <section class="sheet inside offer" aria-label="The offer">
-      <div class="offer-hero">
-        <img src={hero} alt="" />
-        <div class="offer-hero-scrim"></div>
-        <div class="offer-hero-copy">
-          <p class="eyebrow light">Your upgrade</p>
+      <div class="sheet-pad offer-top">
+        <header class="sheet-head offer-head">
+          <p class="eyebrow"><Icon name="wifi" size={14} /> Your upgrade</p>
           <h2>Private Network &amp; Local Smart Home</h2>
-          <p>For homeowners already living in their house — with existing internet, and often Alexa or Siri.</p>
+          <p class="lead">
+            For homeowners already living in their house — with existing internet, and often Alexa or Siri.
+          </p>
+        </header>
+
+        <div class="dash-pair" aria-label="Example dashboards">
+          <figure class="dash-card">
+            <img src={unifiDash} alt="UniFi Network dashboard showing internet health, clients, and activity" />
+            <figcaption>
+              <strong>UniFi Network</strong>
+              <span>Your gateway, Wi‑Fi, and devices — one clean console</span>
+            </figcaption>
+          </figure>
+          <figure class="dash-card">
+            <img src={haDash} alt="Home Assistant home overview with rooms and status summaries" />
+            <figcaption>
+              <strong>Home Assistant</strong>
+              <span>Rooms, lights, climate — local, under your roof</span>
+            </figcaption>
+          </figure>
         </div>
       </div>
+
       <div class="sheet-pad offer-body">
         <div class="two-col">
           <div>
@@ -446,70 +466,84 @@ const pillars = [
     flex-direction: column;
   }
 
-  .offer-hero {
-    position: relative;
-    height: 2.35in;
-    overflow: hidden;
-    color: #f7f3ec;
+  .offer-top {
+    padding-bottom: 0.35in;
   }
 
-  .offer-hero > img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 40%;
-    display: block;
-  }
-
-  .offer-hero-scrim {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(26, 22, 18, 0.35), rgba(26, 22, 18, 0.78));
-  }
-
-  .offer-hero-copy {
-    position: relative;
-    z-index: 1;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 0.55in 0.65in 0.4in;
-  }
-
-  .offer-hero-copy h2 {
-    margin: 0.25rem 0 0.35rem;
+  .offer-head h2 {
+    margin: 0.3rem 0 0.4rem;
     font-size: 1.7rem;
-    color: #f7f3ec;
   }
 
-  .offer-hero-copy p {
-    margin: 0;
-    max-width: 34rem;
-    color: rgba(247, 243, 236, 0.88);
+  .offer-head .lead {
+    max-width: 36rem;
     font-size: 0.9rem;
   }
 
+  .dash-pair {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 0.45rem;
+    margin-top: 0.7rem;
+  }
+
+  .dash-card {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .dash-card img {
+    display: block;
+    width: 100%;
+    height: 2.15in;
+    object-fit: cover;
+    object-position: top left;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: #111;
+  }
+
+  .dash-card figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    margin-top: 0.35rem;
+  }
+
+  .dash-card figcaption strong {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .dash-card figcaption span {
+    font-size: 0.7rem;
+    color: var(--ink-soft);
+    line-height: 1.3;
+  }
+
   .offer-body {
-    padding-top: 0.45in;
-    padding-bottom: 0.55in;
+    padding-top: 0;
+    padding-bottom: 0.45in;
+    border-top: 1px solid var(--line);
   }
 
   .two-col {
     display: grid;
     grid-template-columns: 1.35fr 0.9fr;
-    gap: 0.7in;
+    gap: 0.55in;
+    padding-top: 0.4in;
   }
 
   .two-col h3 {
-    margin: 0 0 0.45rem;
-    font-size: 1.05rem;
+    margin: 0 0 0.35rem;
+    font-size: 0.98rem;
   }
 
   .two-col h3.mt {
-    margin-top: 0.85rem;
+    margin-top: 0.65rem;
   }
 
   .check,
@@ -517,28 +551,28 @@ const pillars = [
     margin: 0;
     padding-left: 1.05rem;
     color: var(--ink-soft);
-    font-size: 0.82rem;
-    line-height: 1.45;
+    font-size: 0.76rem;
+    line-height: 1.4;
   }
 
   .check li,
   .steps li {
-    margin: 0.28rem 0;
+    margin: 0.22rem 0;
   }
 
   .price {
     margin: 0;
     font-family: var(--font-display);
-    font-size: 2.4rem;
+    font-size: 2.1rem;
     color: var(--slate);
   }
 
   .price-note,
   .muted {
-    margin: 0.35rem 0 0;
-    font-size: 0.8rem;
+    margin: 0.3rem 0 0;
+    font-size: 0.74rem;
     color: var(--ink-soft);
-    line-height: 1.4;
+    line-height: 1.35;
   }
 
   /* —— Back cover —— */
@@ -631,7 +665,7 @@ const pillars = [
     .bleed-photo,
     .back-photo,
     .edge-photo img,
-    .offer-hero > img {
+    .dash-card img {
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
@@ -667,6 +701,15 @@ const pillars = [
     .two-col {
       grid-template-columns: 1fr;
       gap: 1.25rem;
+    }
+
+    .dash-pair {
+      grid-template-columns: 1fr;
+    }
+
+    .dash-card img {
+      height: auto;
+      max-height: 3.2in;
     }
   }
 </style>
