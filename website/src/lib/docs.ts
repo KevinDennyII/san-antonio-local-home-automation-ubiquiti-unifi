@@ -3,9 +3,43 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { marked } from 'marked';
 
-const websiteDir = path.dirname(fileURLToPath(import.meta.url));
-// website/src/lib → repo root (three levels up)
-export const repoRoot = path.resolve(websiteDir, '../../..');
+const marker = path.join('sales', 'notion-pilot-one-pager.md');
+
+/** Resolve where markdown lives (synced content/ on Netlify, or repo root locally). */
+function findDocsRoot(): string {
+  const here = path.dirname(fileURLToPath(import.meta.url));
+  const candidates = [
+    // Preferred: website/content after sync-content prebuild
+    path.join(process.cwd(), 'content'),
+    path.resolve(here, '../../content'),
+    // Repo root when cwd is website/
+    path.resolve(process.cwd(), '..'),
+    // Repo root when cwd is already the repo
+    process.cwd(),
+    // website/src/lib → repo root
+    path.resolve(here, '../../..'),
+  ];
+
+  for (const dir of candidates) {
+    if (existsSync(path.join(dir, marker))) return dir;
+  }
+
+  // Walk upward from cwd
+  let dir = process.cwd();
+  for (let i = 0; i < 8; i++) {
+    if (existsSync(path.join(dir, marker))) return dir;
+    if (existsSync(path.join(dir, 'content', marker))) return path.join(dir, 'content');
+    const parent = path.dirname(dir);
+    if (parent === dir) break;
+    dir = parent;
+  }
+
+  throw new Error(
+    `Could not locate docs (looked for ${marker}). cwd=${process.cwd()} import.meta.url=${import.meta.url}`,
+  );
+}
+
+export const repoRoot = findDocsRoot();
 
 export type DocEntry = {
   slug: string;

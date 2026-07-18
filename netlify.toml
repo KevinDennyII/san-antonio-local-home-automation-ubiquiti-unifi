@@ -1,4 +1,5 @@
-# Astro site lives in /website — not the repo root
+# Astro site lives in /website — not the repo root.
+# Full repo is still available, so prebuild can sync ../sales etc. into website/content.
 [build]
   base = "website"
   command = "npm run build"
