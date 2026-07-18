@@ -241,6 +241,62 @@ export function getDoc(slug: string): DocEntry | undefined {
   return docsCatalog.find((d) => d.slug === slug);
 }
 
+export function getDocByFile(filePath: string): DocEntry | undefined {
+  const normalized = filePath.replace(/^\.\//, '').replace(/\\/g, '/');
+  return docsCatalog.find((d) => d.file === normalized || d.file.endsWith('/' + normalized) || path.basename(d.file) === normalized);
+}
+
+/** Map repo markdown paths (and common relative forms) → doc slug */
+function buildFileToSlugMap(): Map<string, string> {
+  const map = new Map<string, string>();
+  for (const doc of docsCatalog) {
+    map.set(doc.file, doc.slug);
+    map.set(doc.file.replace(/\.md$/i, ''), doc.slug);
+    const base = path.basename(doc.file);
+    if (base.toLowerCase() !== 'readme.md') {
+      map.set(base, doc.slug);
+      map.set(base.replace(/\.md$/i, ''), doc.slug);
+    }
+  }
+  // Common relative links used inside delivery/
+  map.set('../ha-host-hardware.md', 'ha-host');
+  map.set('../voice-standard.md', 'voice-standard');
+  map.set('../sales/pilot-offer.md', 'pilot-offer');
+  map.set('../pilots/pricing-refinement-log.md', 'pricing-log');
+  map.set('vlan-design-template.md', 'vlan');
+  map.set('sow-template.md', 'sow');
+  map.set('voice-standard.md', 'voice-standard');
+  map.set('client-handoff.md', 'handoff');
+  map.set('update-cadence.md', 'updates');
+  map.set('support-ticket-process.md', 'support');
+  map.set('notion-pilot-one-pager.md', 'pilot-plan');
+  map.set('pilot-offer.md', 'pilot-offer');
+  return map;
+}
+
+/** Rewrite repo .md paths into clickable /docs/... links for the website. */
+export function linkifyDocRefs(markdown: string, baseUrl = ''): string {
+  const base = baseUrl.replace(/\/$/, '');
+  const map = buildFileToSlugMap();
+  const keys = [...map.keys()].sort((a, b) => b.length - a.length);
+  let out = markdown;
+
+  for (const key of keys) {
+    const slug = map.get(key)!;
+    const href = `${base}/docs/${slug}`;
+    const label = path.basename(key).replace(/\.md$/i, '') || slug;
+
+    // Markdown links: [text](path.md)
+    out = out.split(`](${key})`).join(`](${href})`);
+    out = out.split(`](./${key})`).join(`](${href})`);
+
+    // Backtick file refs: `sales/foo.md` → clickable
+    out = out.split('`' + key + '`').join(`[${label}](${href})`);
+  }
+
+  return out;
+}
+
 export function readDocMarkdown(entry: DocEntry): string {
   const full = path.join(repoRoot, entry.file);
   if (!existsSync(full)) {
@@ -249,8 +305,8 @@ export function readDocMarkdown(entry: DocEntry): string {
   return readFileSync(full, 'utf8');
 }
 
-export function renderDocHtml(entry: DocEntry): string {
-  const md = readDocMarkdown(entry);
+export function renderDocHtml(entry: DocEntry, baseUrl = ''): string {
+  const md = linkifyDocRefs(readDocMarkdown(entry), baseUrl);
   return marked.parse(md, { async: false }) as string;
 }
 

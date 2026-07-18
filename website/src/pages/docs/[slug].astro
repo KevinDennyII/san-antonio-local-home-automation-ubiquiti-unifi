@@ -15,8 +15,8 @@ if (!entry) {
   throw new Error(`Unknown doc slug: ${slug}`);
 }
 
-const html = renderDocHtml(entry);
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const html = renderDocHtml(entry, base);
 ---
 
 <BaseLayout title={entry.title} description={entry.description}>
@@ -34,7 +34,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             </a>
           )
         }
-        <p class="source">Source: <code>{entry.file}</code></p>
       </aside>
       <article class="prose doc-body" set:html={html} />
     </div>
@@ -76,16 +75,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   .aside-desc {
     color: var(--ink-soft);
     font-size: 0.95rem;
-  }
-
-  .source {
-    margin: 1.25rem 0 0;
-    font-size: 0.8rem;
-    color: var(--ink-soft);
-  }
-
-  .source code {
-    font-size: 0.78rem;
   }
 
   .doc-body {
