@@ -1,0 +1,8 @@
+# Astro site lives in /website — not the repo root
+[build]
+  base = "website"
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
