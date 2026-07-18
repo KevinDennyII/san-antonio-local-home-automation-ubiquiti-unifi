@@ -1,0 +1,35 @@
+# Safe starter automations — enable only after client approval at handoff
+# Place on HA host under config/packages/ (not for public client secrets)
+
+automation_goodnight:
+  automation:
+    - id: estate_goodnight_stub
+      alias: "Estate — Goodnight (stub)"
+      mode: single
+      trigger:
+        - platform: event
+          event_type: estate_goodnight_request
+      # Replace with input_button or Assist intent in production
+      condition: []
+      action:
+        - action: persistent_notification.create
+          data:
+            title: "Goodnight"
+            message: "Wire this to light scenes per area after handoff."
+
+automation_backup_note:
+  automation:
+    - id: estate_weekly_backup_check
+      alias: "Estate — Weekly backup reminder (Provider)"
+      trigger:
+        - platform: time
+          at: "09:00:00"
+      condition:
+        - condition: time
+          weekday:
+            - mon
+      action:
+        - action: persistent_notification.create
+          data:
+            title: "Concierge"
+            message: "Verify HA backup completed; Provider checks under Concierge."

@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import { docsBySection } from '../../lib/docs';
+
+const sections = docsBySection();
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const order = ['Share', 'Sales', 'Delivery', 'Legal', 'Operations', 'Pilots', 'Pipeline'];
+---
+
+<BaseLayout title="Docs" description="Full Private Home Network documentation library.">
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow"><Icon name="doc" size={14} /> Documentation</p>
+      <h1 class="section-title">Everything in one place</h1>
+      <p class="section-lead">
+        Access from anywhere once deployed. Share the Pilot plan with your realtor; keep the rest as your operating playbook.
+      </p>
+
+      {
+        order.map((section) => {
+          const items = sections[section];
+          if (!items?.length) return null;
+          return (
+            <div class="doc-section">
+              <h2>{section}</h2>
+              <div class="doc-grid">
+                {items.map((doc) => (
+                  <a class="doc-card" href={`${base}/docs/${doc.slug}`}>
+                    <div class="doc-card-top">
+                      <span class="icon-wrap">
+                        <Icon name={doc.shareable ? 'share' : 'doc'} />
+                      </span>
+                      {doc.shareable && <span class="pill">Shareable</span>}
+                    </div>
+                    <h3>{doc.title}</h3>
+                    <p>{doc.description}</p>
+                  </a>
+                ))}
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  h1.section-title {
+    margin-top: 0.35rem;
+  }
+
+  .doc-section {
+    margin-top: 2.75rem;
+  }
+
+  .doc-section h2 {
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
+    color: var(--slate);
+  }
+
+  .doc-grid {
+    display: grid;
+    gap: 0.9rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .doc-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 1.15rem 1.2rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.55);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .doc-card:hover {
+    border-color: var(--copper);
+    transform: translateY(-2px);
+    color: inherit;
+  }
+
+  .doc-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.7rem;
+  }
+
+  .pill {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--copper);
+    background: rgba(166, 93, 46, 0.12);
+    padding: 0.25rem 0.5rem;
+    border-radius: 999px;
+  }
+
+  .doc-card h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.05rem;
+  }
+
+  .doc-card p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+</style>

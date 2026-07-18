@@ -1,0 +1,43 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Private home networking with Ubiquiti UniFi and local Home Assistant.' } = Astro.props;
+const fullTitle = title === 'Home' ? 'Private Home Network' : `${title} · Private Home Network`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>{fullTitle}</title>
+  </head>
+  <body>
+    <Nav />
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="brand">Private Home Network</div>
+        <p style="margin: 0.4rem 0 0;">
+          Pilot materials for San Antonio UniFi + Home Assistant installs. Share the Pilot plan page with partners; use All docs for the full playbook.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

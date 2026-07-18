@@ -1,0 +1,17 @@
+# Client secrets, credentials, and live backups
+clients/
+*.pem
+*.key
+secrets.yaml
+!**/secrets.yaml.example
+
+# Website
+website/node_modules/
+website/dist/
+website/.astro/
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/

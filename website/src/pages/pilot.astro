@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import { getDoc, renderDocHtml } from '../lib/docs';
+
+const entry = getDoc('pilot-plan')!;
+const html = renderDocHtml(entry);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout
+  title="Pilot plan"
+  description="Private Network & Local Smart Home pilot — shareable plan for realtor partners."
+>
+  <section class="share-bar">
+    <div class="container share-inner">
+      <div>
+        <p class="eyebrow"><Icon name="share" size={14} /> Share this page</p>
+        <p class="share-note">This is the realtor-friendly brief. Bookmark it or send the link after you deploy.</p>
+      </div>
+      <a class="btn btn-ghost" href={`${base}/docs`}>All documentation</a>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 1.5rem;">
+    <div class="container">
+      <article class="prose pilot-sheet" set:html={html} />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .share-bar {
+    padding: 1.25rem 0 0;
+  }
+
+  .share-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.15rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .share-note {
+    margin: 0.25rem 0 0;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+  }
+
+  .pilot-sheet {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--line);
+    border-radius: calc(var(--radius) + 2px);
+    padding: clamp(1.25rem, 3vw, 2.25rem);
+    box-shadow: var(--shadow);
+  }
+</style>

@@ -1,0 +1,114 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import { docsCatalog, getDoc, renderDocHtml } from '../../lib/docs';
+
+export function getStaticPaths() {
+  return docsCatalog.map((doc) => ({
+    params: { slug: doc.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const entry = getDoc(slug!);
+if (!entry) {
+  throw new Error(`Unknown doc slug: ${slug}`);
+}
+
+const html = renderDocHtml(entry);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout title={entry.title} description={entry.description}>
+  <section class="section">
+    <div class="container doc-layout">
+      <aside class="doc-aside">
+        <a class="back" href={`${base}/docs`}>← All docs</a>
+        <p class="eyebrow">{entry.section}</p>
+        <h1>{entry.title}</h1>
+        <p class="aside-desc">{entry.description}</p>
+        {
+          entry.shareable && (
+            <a class="btn btn-primary" href={`${base}/pilot`}>
+              Open share page <Icon name="share" size={14} />
+            </a>
+          )
+        }
+        <p class="source">Source: <code>{entry.file}</code></p>
+      </aside>
+      <article class="prose doc-body" set:html={html} />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .doc-layout {
+    display: grid;
+    gap: 1.75rem;
+  }
+
+  .doc-aside {
+    padding: 1.25rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.55);
+    height: fit-content;
+  }
+
+  .back {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 650;
+    font-size: 0.88rem;
+    margin-bottom: 1rem;
+    color: var(--slate);
+  }
+
+  .back:hover {
+    color: var(--copper);
+  }
+
+  .doc-aside h1 {
+    font-size: 1.55rem;
+    margin: 0.35rem 0 0.5rem;
+  }
+
+  .aside-desc {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  .source {
+    margin: 1.25rem 0 0;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  .source code {
+    font-size: 0.78rem;
+  }
+
+  .doc-body {
+    padding: clamp(1.1rem, 2.5vw, 1.85rem);
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: var(--shadow);
+  }
+
+  .doc-body :global(h1) {
+    display: none;
+  }
+
+  @media (min-width: 900px) {
+    .doc-layout {
+      grid-template-columns: 260px 1fr;
+      align-items: start;
+    }
+
+    .doc-aside {
+      position: sticky;
+      top: 5.5rem;
+    }
+  }
+</style>

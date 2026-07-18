@@ -1,0 +1,110 @@
+---
+import Icon from './Icon.astro';
+
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const links = [
+  { href: `${base}/`, label: 'Home', match: '/' },
+  { href: `${base}/pilot`, label: 'Pilot plan', match: '/pilot' },
+  { href: `${base}/docs`, label: 'All docs', match: '/docs' },
+];
+
+function isActive(match: string) {
+  if (match === '/') return pathname === `${base}` || pathname === `${base}/` || pathname === '/';
+  return pathname === match || pathname.startsWith(match + '/') || pathname.endsWith(match);
+}
+---
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href={`${base}/`}>
+      <span class="brand-mark" aria-hidden="true"><Icon name="lock" size={18} /></span>
+      <span>
+        <strong>Private Home Network</strong>
+        <small>San Antonio · UniFi + Home Assistant</small>
+      </span>
+    </a>
+    <nav aria-label="Primary">
+      {
+        links.map((l) => (
+          <a href={l.href} class:list={['nav-link', { active: isActive(l.match) }]}>
+            {l.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    backdrop-filter: blur(14px);
+    background: rgba(243, 238, 230, 0.82);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 4.25rem;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .brand-mark {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .brand strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 550;
+  }
+
+  .brand small {
+    display: block;
+    color: var(--ink-soft);
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: var(--ink-soft);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.45rem 0.75rem;
+    border-radius: 999px;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--ink);
+    background: rgba(255, 255, 255, 0.65);
+  }
+</style>

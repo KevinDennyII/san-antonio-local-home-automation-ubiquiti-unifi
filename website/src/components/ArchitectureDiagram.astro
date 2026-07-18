@@ -1,0 +1,119 @@
+---
+import Icon from './Icon.astro';
+
+const nodes = [
+  { id: 'isp', label: 'ISP modem', sub: 'Existing internet', x: 8, y: 42 },
+  { id: 'udm', label: 'UniFi Dream Machine', sub: 'Secure gateway', x: 28, y: 42 },
+  { id: 'aps', label: 'U6 / U7 APs + mesh', sub: 'Whole-home Wi‑Fi', x: 50, y: 22 },
+  { id: 'ha', label: 'Home Assistant', sub: 'Local AI & control', x: 50, y: 62 },
+  { id: 'voice', label: 'Satellite1 voice', sub: 'Local wake word', x: 72, y: 62 },
+  { id: 'devices', label: 'Smart devices', sub: 'Lights · climate · locks', x: 72, y: 22 },
+];
+
+const edges = [
+  ['isp', 'udm'],
+  ['udm', 'aps'],
+  ['udm', 'ha'],
+  ['ha', 'voice'],
+  ['ha', 'devices'],
+  ['aps', 'devices'],
+];
+
+function point(id: string) {
+  return nodes.find((n) => n.id === id)!;
+}
+---
+
+<figure class="arch">
+  <svg viewBox="0 0 100 86" role="img" aria-label="Architecture: ISP to UniFi to Home Assistant and devices">
+    {
+      edges.map(([from, to]) => {
+        const a = point(from);
+        const b = point(to);
+        return (
+          <line
+            x1={a.x + 8}
+            y1={a.y + 6}
+            x2={b.x}
+            y2={b.y + 6}
+            class="arch-line"
+          />
+        );
+      })
+    }
+    {
+      nodes.map((n) => (
+        <g transform={`translate(${n.x} ${n.y})`}>
+          <rect class="arch-node" width="20" height="14" rx="2.2" />
+          <text class="arch-label" x="10" y="6.2" text-anchor="middle">
+            {n.label}
+          </text>
+          <text class="arch-sub" x="10" y="10.4" text-anchor="middle">
+            {n.sub}
+          </text>
+        </g>
+      ))
+    }
+  </svg>
+  <figcaption>
+    <span class="eyebrow"><Icon name="layers" size={14} /> How it fits together</span>
+    <p>Everything stays on the home network. Cloud assistants are optional bridges only.</p>
+  </figcaption>
+</figure>
+
+<style>
+  .arch {
+    margin: 0;
+    padding: 1.25rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    background:
+      linear-gradient(160deg, rgba(255, 255, 255, 0.7), rgba(243, 238, 230, 0.85)),
+      radial-gradient(circle at 80% 20%, rgba(166, 93, 46, 0.08), transparent 40%);
+    box-shadow: var(--shadow);
+  }
+
+  .arch svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .arch-line {
+    stroke: var(--slate-soft);
+    stroke-width: 0.35;
+    stroke-dasharray: 0.8 0.6;
+    opacity: 0.75;
+  }
+
+  .arch-node {
+    fill: rgba(255, 255, 255, 0.92);
+    stroke: var(--line);
+    stroke-width: 0.25;
+  }
+
+  .arch-label {
+    font-family: var(--font-body);
+    font-size: 1.55px;
+    font-weight: 700;
+    fill: var(--ink);
+  }
+
+  .arch-sub {
+    font-family: var(--font-body);
+    font-size: 1.2px;
+    fill: var(--ink-soft);
+  }
+
+  figcaption {
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  figcaption p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+</style>

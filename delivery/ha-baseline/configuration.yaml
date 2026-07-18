@@ -1,0 +1,32 @@
+# Home Assistant baseline — minimal configuration stub
+# Copy into a new HA install only as a starting point.
+# Prefer UI configuration for integrations; use packages for shared automations.
+
+default_config:
+
+homeassistant:
+  # name: Estate
+  # latitude: !secret latitude
+  # longitude: !secret longitude
+  # elevation: !secret elevation
+  # unit_system: imperial
+  # time_zone: America/Chicago
+  # currency: USD
+  packages: !include_dir_named packages
+
+# Keep secrets out of git — use secrets.yaml on the device only.
+# Example secrets.yaml keys: latitude, longitude, elevation, tailscale notes
+
+recorder:
+  purge_keep_days: 14
+
+# Example notify group — replace with companion notify services after app setup
+# notify:
+#   - platform: group
+#     name: owners
+#     services:
+#       - service: mobile_app_iphone_owner
+#       - service: mobile_app_iphone_partner
+
+logger:
+  default: warning
