@@ -53,14 +53,14 @@ const pillars = [
     <div class="screen-bar no-print">
       <a class="back" href={`${base}/`}>← Back to site</a>
       <div class="screen-actions">
-        <span>2 sheets · print double-sided · US Letter</span>
+        <span>2 sheets · print double-sided · US Letter · turn on “Background graphics” if images are missing</span>
         <button type="button" onclick="window.print()">Print / Save as PDF</button>
       </div>
     </div>
 
     <!-- SHEET 1 FRONT — Cover -->
     <section class="sheet cover" aria-label="Front cover">
-      <div class="bleed-photo" style={`background-image: url('${hero}')`}></div>
+      <img class="bleed-photo" src={hero} alt="" />
       <div class="cover-scrim"></div>
       <div class="cover-inner">
         <p class="eyebrow light"><Icon name="lock" size={14} /> Private Home Network</p>
@@ -105,13 +105,16 @@ const pillars = [
           </p>
         </aside>
       </div>
-      <div class="edge-photo" style={`background-image: url('${hero}')`} aria-hidden="true"></div>
+      <div class="edge-photo" aria-hidden="true">
+        <img src={hero} alt="" />
+      </div>
       <p class="sheet-label no-print">Sheet 1 · Back</p>
     </section>
 
     <!-- SHEET 2 FRONT — The offer -->
     <section class="sheet inside offer" aria-label="The offer">
-      <div class="offer-hero" style={`background-image: url('${hero}')`}>
+      <div class="offer-hero">
+        <img src={hero} alt="" />
         <div class="offer-hero-scrim"></div>
         <div class="offer-hero-copy">
           <p class="eyebrow light">Your upgrade</p>
@@ -155,7 +158,7 @@ const pillars = [
 
     <!-- SHEET 2 BACK — Back cover -->
     <section class="sheet back-cover" aria-label="Back cover">
-      <div class="back-photo" style={`background-image: url('${hero}')`}></div>
+      <img class="back-photo" src={hero} alt="" />
       <div class="back-scrim"></div>
       <div class="back-inner">
         <p class="eyebrow light"><Icon name="mic" size={14} /> What to say in one breath</p>
@@ -306,8 +309,27 @@ const pillars = [
   .back-photo {
     position: absolute;
     inset: 0;
-    background-size: cover;
-    background-position: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .edge-photo {
+    position: relative;
+    overflow: hidden;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .edge-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 70% center;
+    display: block;
   }
 
   .cover-scrim,
@@ -362,12 +384,6 @@ const pillars = [
 
   .why .sheet-pad {
     padding-right: 0.45in;
-  }
-
-  .edge-photo {
-    background-size: cover;
-    background-position: 70% center;
-    border-left: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   .sheet-head h2 {
@@ -433,9 +449,18 @@ const pillars = [
   .offer-hero {
     position: relative;
     height: 2.35in;
-    background-size: cover;
-    background-position: center 40%;
+    overflow: hidden;
     color: #f7f3ec;
+  }
+
+  .offer-hero > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+    display: block;
   }
 
   .offer-hero-scrim {
@@ -586,6 +611,8 @@ const pillars = [
   @media print {
     body {
       background: white;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
     }
 
     .no-print {
@@ -597,6 +624,16 @@ const pillars = [
       box-shadow: none;
       page-break-after: always;
       break-after: page;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .bleed-photo,
+    .back-photo,
+    .edge-photo img,
+    .offer-hero > img {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
     }
 
     .sheet:last-child {
