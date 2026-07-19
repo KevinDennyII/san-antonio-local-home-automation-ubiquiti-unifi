@@ -5,6 +5,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const hero = `${base}/images/hero-estate.jpg`;
 const haDash = `${base}/images/dashboards/ha-home-dashboard-overview.png`;
 const unifiDash = `${base}/images/dashboards/unifi-console-dashboard.png`;
+const odsLogo = `${base}/images/brand/ohhdenny-services-transparent.png`;
 
 const pillars = [
   {
@@ -186,17 +187,33 @@ const pillars = [
           AI has made hacking faster and more efficient — and a lot of consumer routers (like Linksys) have known weak spots. We upgrade your home to Ubiquiti UniFi: a better, more convenient, efficient, and secure setup you actually control. Then we use Home Assistant to create your own local AI and smart-home system, with a private voice speaker and your own wake word. It runs inside your home instead of depending on Amazon or another cloud, so your essential automations can keep working during an internet or cloud outage. This is typically about $5,000, and we handle the equipment, setup, and configuration. Cameras and a video doorbell can be added later once we scope them.
         </blockquote>
 
-        <div class="back-footer">
-          <div>
-            <strong>Private Home Network</strong>
-            <span>San Antonio · UniFi + Home Assistant</span>
+        <div class="back-bottom">
+          <div class="back-footer">
+            <div>
+              <strong>Private Home Network</strong>
+              <span>San Antonio · UniFi + Home Assistant</span>
+            </div>
+            <div class="back-cta">
+              <strong class="agent-name">Sasha Jam</strong>
+              <span>The Jam Realty Group · San Antonio, Texas</span>
+              <span>210-556-9005</span>
+              <span>sasha@jamgrouprealty.com</span>
+              <span class="url">jamgrouprealty.com</span>
+            </div>
           </div>
-          <div class="back-cta">
-            <strong class="agent-name">Sasha Jam</strong>
-            <span>The Jam Realty Group · San Antonio, Texas</span>
-            <span>210-556-9005</span>
-            <span>sasha@jamgrouprealty.com</span>
-            <span class="url">jamgrouprealty.com</span>
+
+          <div class="byline">
+            <p class="byline-by">By</p>
+            <img
+              class="byline-logo"
+              src={`${odsLogo}?v=3`}
+              alt="OhhDenny Services"
+              width="236"
+              height="66"
+            />
+            <p class="byline-brand">OhhDenny Services, LLC</p>
+            <p class="byline-detail">ohhdennyservicesllc@gmail.com</p>
+            <p class="byline-detail">ohhdennyservices.com · Selma / San Antonio, Texas</p>
           </div>
         </div>
       </div>
@@ -587,7 +604,7 @@ const pillars = [
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0.75in 0.7in 0.7in;
+    padding: 0.75in 0.7in 0.55in;
   }
 
   .back-inner blockquote {
@@ -599,6 +616,10 @@ const pillars = [
     line-height: 1.5;
     color: rgba(247, 243, 236, 0.92);
     max-width: 36rem;
+  }
+
+  .back-bottom {
+    margin-top: auto;
   }
 
   .back-footer {
@@ -642,6 +663,45 @@ const pillars = [
     margin-top: 0.35rem;
   }
 
+  .byline {
+    margin-top: 0.65rem;
+    padding-top: 0.55rem;
+    border-top: 1px solid rgba(247, 243, 236, 0.18);
+    text-align: center;
+  }
+
+  .byline-by {
+    margin: 0 0 0.22rem;
+    font-size: 0.58rem;
+    font-weight: 650;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(247, 243, 236, 0.6);
+  }
+
+  .byline-logo {
+    display: block;
+    width: 1.2in;
+    height: auto;
+    margin: 0 auto 0.32rem;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.55));
+  }
+
+  .byline-brand {
+    margin: 0;
+    font-size: 0.65rem;
+    font-weight: 650;
+    letter-spacing: 0.04em;
+    color: rgba(247, 243, 236, 0.9);
+  }
+
+  .byline-detail {
+    margin: 0.12rem 0 0;
+    font-size: 0.62rem;
+    line-height: 1.3;
+    color: rgba(247, 243, 236, 0.7);
+  }
+
   @media print {
     body {
       background: white;
@@ -665,7 +725,8 @@ const pillars = [
     .bleed-photo,
     .back-photo,
     .edge-photo img,
-    .dash-card img {
+    .dash-card img,
+    .byline-logo {
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
