@@ -2,7 +2,7 @@
 
 Private-network smart home infrastructure for San Antonio / Texas Hill Country luxury residences ($1M+, 5,000–10,000 sq ft).
 
-**Offer:** Ubiquiti UniFi networking (UDM Pro console for Wi‑Fi, with room for cameras, doorbell, landline, and local media later), 100% local Home Assistant control, and private voice — with optional bridges to Alexa, Google Assistant, or Siri.
+**Offer:** Ubiquiti UniFi networking (UDM Pro console for Wi‑Fi, with room for cameras, doorbell, landline, and local media later), 100% local Home Assistant control, and private voice.
 
 **One-liner:** *You want a system you control, built with security first — Ubiquiti UniFi is that. Home Assistant runs as private, closed home automation on your network; if the cloud goes down, your house keeps working.*
 
@@ -26,7 +26,7 @@ Start here: [sales/pilot-offer.md](sales/pilot-offer.md) · client-facing brief:
 - **Security-first control:** consumer routers (Linksys, etc.) often have known configuration exploits — you want gear built for control and security. **Ubiquiti UniFi is that.**
 - **Not banned-list consumer gear:** cleaner alternative to flagged/imported consumer Wi‑Fi brands.
 - **Local resilience:** Home Assistant runs on-prem as closed home automation — a big Amazon/Google outage doesn't take the home down.
-- **Private voice:** local speakers, not always-on cloud mics; keep Alexa/Siri only as an optional bridge.
+- **Private voice:** local speakers with your own wake word — not always-on cloud mics.
 - **One ecosystem later:** Wi‑Fi now; cameras, doorbell, landline, media when scoped.
 
 ## Business model
@@ -60,6 +60,6 @@ Start here: [sales/pilot-offer.md](sales/pilot-offer.md) · client-facing brief:
 - Gateway/console: UniFi Dream Machine Pro (Wi‑Fi, Protect cameras, doorbell, UniFi Talk, media/NVR storage)
 - Wi‑Fi: U7 / U6 APs (wired backhaul; mesh only as exception; reuse adoptable existing APs in pilots)
 - Smart home: Home Assistant OS on dedicated hardware (100% local)
-- Voice: FutureProofHomes Satellite1 + M5Stack Atom Echo (local Assist); Alexa/Siri optional bridge only
+- Voice: FutureProofHomes Satellite1 + M5Stack Atom Echo (local Assist)
 - Remote access: Tailscale or WireGuard (not open HA to the internet)
 - Optional later: advanced on-prem features only after network + HA automations are stable 30 days

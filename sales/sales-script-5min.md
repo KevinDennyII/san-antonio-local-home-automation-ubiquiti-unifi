@@ -18,9 +18,9 @@
 
 “A lot of everyday routers — Linksys and similar — have known weak spots in how they’re set up. What you want is a system you actually control, with security first. That’s why we use **Ubiquiti UniFi**.
 
-In a big home, consumer mesh and a pile of Alexa or Google speakers usually also mean dead spots, guests on the same network as locks and cameras, and household data living in someone else’s cloud.
+In a big home, consumer mesh and cloud-tied smart speakers usually also mean dead spots, guests on the same network as locks and cameras, and household data living in someone else’s cloud.
 
-We’re not asking you to throw those assistants away. We’re putting **UniFi and local Home Assistant** underneath — a private, closed home-automation system on your network — so the house keeps working even when you want privacy first, or when a cloud has a bad day.”
+We’re putting **UniFi and local Home Assistant** underneath — a private, closed home-automation system on your network — so the house keeps working even when you want privacy first, or when a cloud has a bad day.”
 
 ---
 
@@ -46,7 +46,7 @@ Remote support for us is through an encrypted tunnel — we don’t leave Home A
 
 *(If Assist works: one voice command — “turn on the demo lamp.”)*
 
-“Voice can stay local. If your family still likes Alexa or Google, we can bridge those later — as a convenience, not as the brain of the house.”
+“Voice can stay local with a private speaker and your own wake word — on your network, not someone else’s cloud.”
 
 ---
 
@@ -67,9 +67,8 @@ Here’s the rate card. [Realtor] and I can get a survey on the calendar this we
 | Objection | Response |
 |-----------|----------|
 | “We already have eero / Google Wi‑Fi.” | “Those are fine for apartments. At this square footage and with cameras/IoT, you want segmentation and wired APs. We replace the weak layer; we don’t rip out every bulb day one.” |
-| “We love Alexa.” | “Keep it. We make UniFi + Home Assistant the foundation; Alexa becomes optional voice. Your automations don’t have to live only at Amazon.” |
+| “What about the voice speakers we already own?” | “Happy to talk through options privately if you want them later. The pilot foundation is UniFi + local Home Assistant + private voice on your network — that stays closed either way.” |
 | “Is this DIY / hobby?” | “No — fixed packages, survey, handoff doc, and a monthly Concierge so firmware and Home Assistant don’t become a second job.” |
-| “What about Siri / Apple?” | “Apple Home can coexist; we design Matter/Thread-friendly where possible and document what stays local vs cloud.” |
 | “Too expensive.” | “Survey first — Package A alone often solves the Wi‑Fi pain. Many clients phase B after move-in.” |
 
 ---

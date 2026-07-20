@@ -20,7 +20,7 @@ UniFi access points need **Power over Ethernet (PoE)**. Keep this in mind on eve
 
 Do **not** put PoE switch jargon on the realtor one-pager — fold it into “coverage needs / home size” when you quote.
 
-**Who it's for:** People **already in their homes** with existing internet and possibly existing access points, and who may already use Alexa or Siri. We migrate them into the UniFi ecosystem and stand up a fully local Home Assistant with private voice.
+**Who it's for:** People **already in their homes** with existing internet and possibly existing access points. We migrate them into the UniFi ecosystem and stand up fully local Home Assistant with private voice.
 
 ---
 
@@ -30,7 +30,7 @@ Do **not** put PoE switch jargon on the realtor one-pager — fold it into “co
 2. **Banned / flagged consumer gear.** Move off equipment that shows up on government/enterprise banned or flagged lists; UniFi is a cleaner alternative.
 3. **One ecosystem (ready for later).** Networking runs from the UniFi console in the **UDM Pro** — with room to add cameras, video doorbell, landline, and media storage later (not in the flat pilot yet).
 4. **Closed local automation.** Home Assistant is private home automation that runs on your network. **If Amazon or a cloud provider has a giant outage, your home still works.**
-5. **Private voice.** FutureProofHomes Satellite1 speaker(s) with local wake words — Alexa/Siri optional as a convenience bridge only.
+5. **Private voice.** FutureProofHomes Satellite1 speaker(s) with local wake words — private voice on their network.
 6. **No middleman.** They're not under the thumb of a vendor who can easily access their data or get hacked with ease.
 
 ---
@@ -57,7 +57,6 @@ This is exactly what we install and configure in the pilot. Cameras, doorbells, 
 ### 3. Private voice
 - **FutureProofHomes Satellite1** speaker(s) as the local voice
 - Home Assistant Assist voice pipeline configured with **their own local wake word(s)**
-- Optional: keep Alexa / Siri as a *bridge*, clearly labeled as convenience only
 
 ### 4. Handoff
 - Client handoff doc + recovery codes (see `delivery/client-handoff.md`)
@@ -126,7 +125,7 @@ Confirmed pilot = **UDM Pro + APs/mesh + Home Assistant + Satellite1 voice**. Ca
 
 ## Pilot flow
 
-1. Quick walkthrough / needs call (existing internet, APs, devices, Alexa/Siri?)
+1. Quick walkthrough / needs call (existing internet, APs, devices?)
 2. Confirm ~$5,000 scope (and where you land in the $4k–$5.5k band) in writing (use `delivery/sow-template.md`, mark **Pilot**)
 3. Order equipment
 4. Wiring partner runs cable if needed

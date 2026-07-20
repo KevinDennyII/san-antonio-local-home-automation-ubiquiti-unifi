@@ -16,7 +16,7 @@
 | UniFi migration | UDM Pro gateway + console; plan rack/placement; reuse or add U6/U7 APs + mesh |
 | Network security | Trusted / IoT / Guest / Cameras VLANs, WPA3, MFA, UPnP off |
 | Home Assistant | Local hub; onboard up to 20 existing devices; core dashboards; encrypted remote support |
-| Private voice | FutureProofHomes Satellite1 with local wake word(s); Alexa/Siri optional convenience bridge only |
+| Private voice | FutureProofHomes Satellite1 with local wake word(s) |
 | Handoff | Recovery codes + 30-min training |
 
 **Wiggle:** lower end for early case-study homes or simple coverage; upper end for larger homes / more APs / **PoE switch required** / harder cutover.  
@@ -65,15 +65,14 @@
 
 ## Package C — Private AI Estate
 
-**Best for:** Households that want a customizable on-prem assistant plus optional familiar cloud voice bridges.
+**Best for:** Households that want a customizable on-prem assistant after the network and automations are stable.
 
 | Included | Detail |
 |----------|--------|
 | All of Package B | Network + Home Assistant |
 | Voice | Home Assistant Assist + wake-word speakers where appropriate |
 | Local AI | Local LLM host for household Q&A and “ask the house” without cloud dependency |
-| Bridges | Optional Alexa / Google / Apple bridges — cloud as a *bridge*, not the brain |
-| Workshop | Written AI personality / household rules session with homeowners |
+| Workshop | Written household rules / personality session with homeowners |
 
 **Investment:** $30,000 – $60,000+ installed  
 **Gate:** Full local AI sold only after Package A/B network and automations are stable for **30 days** (protects reliability in luxury homes)

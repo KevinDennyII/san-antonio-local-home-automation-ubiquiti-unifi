@@ -26,8 +26,8 @@ A: Yes. We own WAN/LAN/Wi‑Fi segmentation and Home Assistant; we coordinate ra
 
 ## Privacy & assistants
 
-**Q: Do we have to remove Alexa?**  
-A: No. We make UniFi + Home Assistant the foundation. Alexa/Google/Siri can remain as optional bridges.
+**Q: Can we keep our existing cloud voice speakers?**  
+A: The pilot foundation is UniFi + local Home Assistant + private voice on your network. If you want something else integrated later, ask us — we can discuss it verbally and scope it separately.
 
 **Q: Is Home Assistant exposed to the internet?**  
 A: No. Remote access uses an encrypted tunnel. We do not port-forward the HA UI.

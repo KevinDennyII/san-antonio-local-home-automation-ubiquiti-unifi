@@ -20,7 +20,7 @@ Use the same short story as the Notion one-pager:
 1. **Consumer routers have weak spots** — Linksys and similar often have known configuration issues  
 2. **You want control + security-first** — **Ubiquiti UniFi is that** (better, more convenient, efficient, secure)  
 3. **Home Assistant = private, closed home automation** — runs on your network, not Amazon’s cloud  
-4. **Private voice** with your own wake word; Alexa/Siri optional as convenience only  
+4. **Private voice** with your own wake word on your network  
 5. **Cloud outage proof** — essential automations keep working  
 6. **Pilot price** ~$5,000 ($4k–$5.5k) — we handle gear, wiring, and setup  
 

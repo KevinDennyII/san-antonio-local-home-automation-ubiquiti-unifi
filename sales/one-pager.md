@@ -7,17 +7,17 @@
 
 ## The problem
 
-Homes often run consumer Wi‑Fi and cloud assistants (Alexa, Siri, Google) that:
+Homes often run consumer Wi‑Fi and cloud-tied smart devices that:
 
 - Sit on everyday routers (Linksys and similar) with **known configuration weak spots**  
 - Use consumer gear — some of it on government/enterprise **banned or flagged lists**  
 - Mix cameras, guests, kids’ devices, and locks on one flat, easily-hacked network  
-- Send household voice and habits to someone else’s cloud  
-- **Break when the cloud breaks** — a big Amazon/Google outage can take your "smart" home down with it  
+- Send household habits and device data to someone else’s cloud  
+- **Break when the cloud breaks** — a big cloud outage can take your "smart" home down with it  
 
 ## The offer
 
-**Ubiquiti UniFi networking + 100% local Home Assistant** — better control, more convenient, efficient, and security-first. Your network and private home automation under your roof, with optional bridges to the assistants your family already knows.
+**Ubiquiti UniFi networking + 100% local Home Assistant** — better control, more convenient, efficient, and security-first. Your network and private home automation under your roof.
 
 > *You want a system you control. Ubiquiti UniFi is that. Home Assistant runs as a closed home-automation system on your network — if the cloud goes down, your house keeps working.*
 
@@ -26,7 +26,7 @@ Homes often run consumer Wi‑Fi and cloud assistants (Alexa, Siri, Google) that
 1. **Ubiquiti UniFi** — stronger Wi‑Fi and a cleaner, more secure setup than typical consumer routers  
 2. **Security with control** — separate networks for family, guests, and smart devices; MFA; not everything on one flat Wi‑Fi  
 3. **One private dashboard** — Home Assistant for lights, climate, locks — fully local home automation  
-4. **Private voice** — FutureProofHomes Satellite1 local speakers; keep Alexa/Siri only if you want, as a bridge  
+4. **Private voice** — FutureProofHomes Satellite1 local speakers with your own wake word  
 5. **Cloud-outage proof** — automations and voice run on your network, not someone else's server  
 
 ## Start here — Pilot
@@ -50,7 +50,7 @@ Pilot = UniFi (UDM Pro) migration + segmented Wi‑Fi + Home Assistant + local v
 
 ## Who it’s for
 
-Homeowners who want control, security, and privacy — and to stop depending on a cloud vendor that can be hacked or go down. Great for people already in their homes who want to upgrade off consumer gear, without giving up the option to still use Alexa, Google, or Siri as bridges.
+Homeowners who want control, security, and privacy — and to stop depending on a cloud vendor that can be hacked or go down. Great for people already in their homes who want to upgrade off consumer gear.
 
 ## Next step
 

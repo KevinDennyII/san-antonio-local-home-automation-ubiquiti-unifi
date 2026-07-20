@@ -3,7 +3,7 @@
 **What we’re doing first · Typical price: ~$5,000**  
 _(Usually $4,000–$5,500 depending on home size, Wi‑Fi coverage needs, and wiring.)_
 
-For homeowners **already living in their home** — they already have internet, and often already have Wi‑Fi access points and Alexa or Siri. We’re not building a mega “estate package” yet. We’re starting with a clean, secure pilot for our first couple of clients.
+For homeowners **already living in their home** — they already have internet, and often already have Wi‑Fi access points. We’re not building a mega “estate package” yet. We’re starting with a clean, secure pilot for our first couple of clients.
 
 ---
 
@@ -15,8 +15,6 @@ We move the home onto UniFi — better, more convenient, efficient, and more sec
 
 If Amazon (or another cloud) has a big outage, **their house still works**.
 
-They can still keep Alexa or Siri if they want — only as a convenience, not as the brain of the house.
-
 ---
 
 ## What’s included (~$5,000)
@@ -26,7 +24,6 @@ They can still keep Alexa or Siri if they want — only as a convenience, not as
 - **Secure network setup** — separate networks for family, guests, and smart devices (not everything on one flat Wi‑Fi)
 - **Home Assistant** — private dashboard for their smart devices (lights, climate, locks, etc.), running locally; we connect up to about **20** existing devices
 - **Private voice** — FutureProofHomes Satellite1 speaker(s) with **their own local wake word**
-- **Optional** — keep Alexa / Siri as a convenience bridge (clearly labeled — not the brain)
 - **We handle** — buying the gear, wiring partner if needed, and **all configuration**
 - **Handoff** — short walkthrough so the homeowner knows how to use it
 
@@ -40,7 +37,7 @@ They can still keep Alexa or Siri if they want — only as a convenience, not as
 - **Ubiquiti UniFi** — more control, cleaner setup, harder target than typical home Wi‑Fi
 - **Harder to hack at home** — separate networks for family, guests, and smart devices (not everything on one flat Wi‑Fi)
 - **Cloud outage proof** — local Home Assistant + private voice keep working if Amazon has a bad day
-- Familiar voice optional — Alexa/Siri can stay, but the house doesn’t depend on them
+- Private local voice — their own wake word on their network
 
 ---
 
