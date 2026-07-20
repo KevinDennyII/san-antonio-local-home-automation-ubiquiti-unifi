@@ -40,7 +40,7 @@ A: Local Assist stays on-prem. Cloud assistants follow their vendors’ policies
 ## Security
 
 **Q: Why Ubiquiti UniFi instead of a normal home router?**  
-A: AI has made hacking faster and more efficient. Many consumer routers (Linksys and similar) have known weak spots in how they’re configured. UniFi is built for control and security-first networking — separate networks for family, guests, and smart devices.
+A: Many consumer routers (Linksys and similar) have known weak spots in how they’re configured. UniFi is built for control and security-first networking — separate networks for family, guests, and smart devices.
 
 **Q: Are cameras on the same Wi‑Fi as kids’ devices?**  
 A: No — cameras sit on a dedicated VLAN under our standard design (when cameras are in scope).

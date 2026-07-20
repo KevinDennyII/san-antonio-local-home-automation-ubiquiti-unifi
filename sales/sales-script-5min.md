@@ -8,7 +8,7 @@
 
 ## 0:00–0:30 — Realtor opens
 
-**Realtor:** “For homes this size, Wi‑Fi and smart devices usually get bolted on after the fact. I work with [Brand/Name] on estate networking and a private smart-home brain — so coverage and control stay with the homeowner.”
+**Realtor:** “For homes this size, Wi‑Fi and smart devices usually get bolted on after the fact. I work with [Brand/Name] on estate networking and private local home automation — so coverage and control stay with the homeowner.”
 
 *(Hands over to you.)*
 
@@ -16,11 +16,11 @@
 
 ## 0:30–1:30 — The problem (you)
 
-“AI has made hacking faster and more efficient. A lot of everyday routers — Linksys and similar — have known weak spots in how they’re set up. What you want is a system you actually control, with security first. That’s why we use **Ubiquiti UniFi**.
+“A lot of everyday routers — Linksys and similar — have known weak spots in how they’re set up. What you want is a system you actually control, with security first. That’s why we use **Ubiquiti UniFi**.
 
 In a big home, consumer mesh and a pile of Alexa or Google speakers usually also mean dead spots, guests on the same network as locks and cameras, and household data living in someone else’s cloud.
 
-We’re not asking you to throw those assistants away. We’re putting **UniFi and a local Home Assistant** underneath — your own local AI and smart home — so the house keeps working even when you want privacy first, or when a cloud has a bad day.”
+We’re not asking you to throw those assistants away. We’re putting **UniFi and local Home Assistant** underneath — a private, closed home-automation system on your network — so the house keeps working even when you want privacy first, or when a cloud has a bad day.”
 
 ---
 
@@ -52,7 +52,7 @@ Remote support for us is through an encrypted tunnel — we don’t leave Home A
 
 ## 4:15–5:00 — Packages + CTA
 
-“We package this three ways: **Network Foundation**, **Private Smart Home**, and **Private AI Estate**. Most luxury homes land on Private Smart Home first; full on-prem AI comes after the network is stable.
+“We package this three ways: **Network Foundation**, **Private Smart Home**, and a later advanced estate package after the network is stable. Most luxury homes land on Private Smart Home first.
 
 Next step isn’t a huge commitment — it’s a **paid site survey** ($500–$1,500, credited to the install). We map coverage, existing devices, and cable paths, then give you a fixed proposal.
 

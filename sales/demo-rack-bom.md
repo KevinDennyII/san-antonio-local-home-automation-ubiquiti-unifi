@@ -64,6 +64,6 @@ Firewall: IoT cannot initiate to Trusted; HA can reach IoT for control.
 ## Realtor staging tips
 
 - Keep the rack **visible but tidy** during consultations  
-- Let the realtor run the first 30 seconds (“this is who I bring in for estate Wi‑Fi and private AI”)  
+- Let the realtor run the first 30 seconds (“this is who I bring in for estate Wi‑Fi and private home automation”)
 - You take over for VLAN + HA + privacy contrast vs Alexa-only  
 - End with: paid survey CTA and leave rate card

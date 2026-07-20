@@ -17,9 +17,9 @@
 
 Use the same short story as the Notion one-pager:
 
-1. **AI made hacking faster** — consumer routers (Linksys, etc.) often have known configuration weak spots  
+1. **Consumer routers have weak spots** — Linksys and similar often have known configuration issues  
 2. **You want control + security-first** — **Ubiquiti UniFi is that** (better, more convenient, efficient, secure)  
-3. **Home Assistant = your own local AI / smart home** — not dependent on Amazon’s cloud  
+3. **Home Assistant = private, closed home automation** — runs on your network, not Amazon’s cloud  
 4. **Private voice** with your own wake word; Alexa/Siri optional as convenience only  
 5. **Cloud outage proof** — essential automations keep working  
 6. **Pilot price** ~$5,000 ($4k–$5.5k) — we handle gear, wiring, and setup  
@@ -33,7 +33,7 @@ Source copy: [`notion-pilot-one-pager.md`](notion-pilot-one-pager.md) · interna
 | Section | Content |
 |---------|---------|
 | Hero | One-liner + CTA (walkthrough / contact) |
-| Why now | AI-era hacking + consumer router risks |
+| Why now | Consumer router risks + wanting a system you control |
 | What we install | UniFi + Home Assistant + private voice (plain language) |
 | What’s included | ~$5k pilot bullets |
 | What’s later | Cameras, doorbell, etc. |

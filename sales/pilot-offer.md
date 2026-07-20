@@ -26,10 +26,10 @@ Do **not** put PoE switch jargon on the realtor one-pager — fold it into “co
 
 ## The pitch (why they switch)
 
-1. **AI-era security.** Hacking is becoming exponentially faster and more efficient. Everyday routers (Linksys and similar) often have known configuration exploits. You want a system you control, built with security first — **Ubiquiti UniFi is that.** Better, more convenient, efficient, and more secure than typical consumer Wi‑Fi.
+1. **Security-first control.** Everyday routers (Linksys and similar) often have known configuration exploits. You want a system you control, built with security first — **Ubiquiti UniFi is that.** Better, more convenient, efficient, and more secure than typical consumer Wi‑Fi.
 2. **Banned / flagged consumer gear.** Move off equipment that shows up on government/enterprise banned or flagged lists; UniFi is a cleaner alternative.
 3. **One ecosystem (ready for later).** Networking runs from the UniFi console in the **UDM Pro** — with room to add cameras, video doorbell, landline, and media storage later (not in the flat pilot yet).
-4. **You own your automation / local AI.** Home Assistant is 100% local. **If Amazon or a cloud provider has a giant outage, your home still works.**
+4. **Closed local automation.** Home Assistant is private home automation that runs on your network. **If Amazon or a cloud provider has a giant outage, your home still works.**
 5. **Private voice.** FutureProofHomes Satellite1 speaker(s) with local wake words — Alexa/Siri optional as a convenience bridge only.
 6. **No middleman.** They're not under the thumb of a vendor who can easily access their data or get hacked with ease.
 
@@ -47,7 +47,7 @@ This is exactly what we install and configure in the pilot. Cameras, doorbells, 
 - Network segmentation: **Trusted / IoT / Guest / Cameras** VLANs (see `delivery/vlan-design-template.md`)
 - WPA3, guest Wi‑Fi, UPnP off, admin MFA
 
-### 2. Home Assistant (local brain)
+### 2. Home Assistant (local automation)
 - Dedicated Home Assistant host on the Trusted VLAN
 - Discovery + onboarding of existing smart devices (up to **20** in pilot scope)
 - Core dashboards: lights, climate, locks
@@ -90,7 +90,7 @@ Adjust per home; goal is to keep hardware affordable so config value carries the
 | U6/U7 mesh unit (if needed) | Coverage where no wired run | ~$100–$180 ea |
 | UniFi PoE switch (8-port Lite/Pro) | **Often required** — UDM has few/no PoE ports; powers APs | ~$100–$300 |
 | Rack / mount / cabling misc | UDM + switch placement + runs by wiring partner | ~$50–$350 |
-| Home Assistant host (mini PC — see `delivery/ha-host-hardware.md`) | Local brain; **not** a Raspberry Pi | ~$180–$400 |
+| Home Assistant host (mini PC — see `delivery/ha-host-hardware.md`) | Local automation host; **not** a Raspberry Pi | ~$180–$400 |
 | FutureProofHomes Satellite1.1 ×1–2 | Private voice speaker | ~$135 ea |
 
 **Typical hardware subtotal (confirmed scope):** ~$1,000–$1,800 (higher when a PoE switch + more APs are needed).
@@ -137,4 +137,4 @@ Confirmed pilot = **UDM Pro + APs/mesh + Home Assistant + Satellite1 voice**. Ca
 
 ## What to say in one breath
 
-> "AI has made hacking faster and more efficient — and a lot of consumer routers (like Linksys) have known weak spots. We upgrade your home to Ubiquiti UniFi: a better, more convenient, efficient, and secure setup you actually control. Then we use Home Assistant to create your own local AI and smart-home system, with a private voice speaker and your own wake word. It runs inside your home instead of depending on Amazon or another cloud, so your essential automations can keep working during an internet or cloud outage. The pilot is typically about $5,000, and we handle the equipment, setup, and configuration. Cameras and a video doorbell can be added later once we scope them."
+> "Everyday consumer routers like Linksys often have known weak spots. We upgrade your home to Ubiquiti UniFi — a more secure, reliable setup you actually control. Then we set up Home Assistant as a private, closed home-automation system that runs on your network: lights, climate, and routines under your roof, not Amazon’s cloud — with an optional private voice speaker and your own wake word. Essential automations can keep working even during an internet or cloud outage. The pilot is typically about $5,000, and we handle the equipment, setup, and configuration. Cameras and a video doorbell can be added later once we scope them."

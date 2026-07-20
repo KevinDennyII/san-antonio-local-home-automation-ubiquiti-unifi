@@ -3,7 +3,7 @@
 **Audience:** Leave-behind for consultations and referrals  
 **Prices:** Flat pilot price below; estate ranges are indicative (hardware + labor), quoted after a paid site survey.
 
-**One-liner:** AI made hacking faster. You want a system you control, built with security first — Ubiquiti UniFi is that. Your network and local AI stay under your roof and keep working even when the cloud goes down.
+**One-liner:** *You want a system you control, built with security first — Ubiquiti UniFi is that. Home Assistant runs as private, closed home automation on your network and keeps working even when the cloud goes down.*
 
 ---
 

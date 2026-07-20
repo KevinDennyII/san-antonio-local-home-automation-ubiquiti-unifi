@@ -9,7 +9,7 @@
 
 Homes often run consumer Wi‑Fi and cloud assistants (Alexa, Siri, Google) that:
 
-- Sit on everyday routers (Linksys and similar) with **known configuration weak spots** — and **AI has made hacking faster and more efficient**  
+- Sit on everyday routers (Linksys and similar) with **known configuration weak spots**  
 - Use consumer gear — some of it on government/enterprise **banned or flagged lists**  
 - Mix cameras, guests, kids’ devices, and locks on one flat, easily-hacked network  
 - Send household voice and habits to someone else’s cloud  
@@ -17,15 +17,15 @@ Homes often run consumer Wi‑Fi and cloud assistants (Alexa, Siri, Google) that
 
 ## The offer
 
-**Ubiquiti UniFi networking + 100% local Home Assistant** — better control, more convenient, efficient, and security-first. Your network and local AI under your roof, with optional bridges to the assistants your family already knows.
+**Ubiquiti UniFi networking + 100% local Home Assistant** — better control, more convenient, efficient, and security-first. Your network and private home automation under your roof, with optional bridges to the assistants your family already knows.
 
-> *AI made hacking faster. You want a system you control. Ubiquiti UniFi is that. Your home’s network and AI stay under your roof — if the cloud goes down, your house keeps working.*
+> *You want a system you control. Ubiquiti UniFi is that. Home Assistant runs as a closed home-automation system on your network — if the cloud goes down, your house keeps working.*
 
 ## What you get
 
 1. **Ubiquiti UniFi** — stronger Wi‑Fi and a cleaner, more secure setup than typical consumer routers  
 2. **Security with control** — separate networks for family, guests, and smart devices; MFA; not everything on one flat Wi‑Fi  
-3. **One private dashboard** — Home Assistant for lights, climate, locks — fully local (your own local AI / smart home)  
+3. **One private dashboard** — Home Assistant for lights, climate, locks — fully local home automation  
 4. **Private voice** — FutureProofHomes Satellite1 local speakers; keep Alexa/Siri only if you want, as a bridge  
 5. **Cloud-outage proof** — automations and voice run on your network, not someone else's server  
 
@@ -43,7 +43,7 @@ Pilot = UniFi (UDM Pro) migration + segmented Wi‑Fi + Home Assistant + local v
 |---------|-----------------|
 | A Network Foundation | $8k–$18k |
 | B Private Smart Home | $15k–$35k |
-| C Private AI Estate | $30k–$60k+ |
+| C Advanced Estate (later) | $30k–$60k+ |
 | Concierge retainer | $150–$400/mo |
 
 \*Larger homes, after a paid site survey ($500–$1,500, credited to install).

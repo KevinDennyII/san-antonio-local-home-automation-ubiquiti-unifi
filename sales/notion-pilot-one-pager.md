@@ -9,9 +9,9 @@ For homeowners **already living in their home** — they already have internet, 
 
 ## The simple idea
 
-**AI has made hacking faster and more efficient.** That means everyday routers (Linksys and similar) — with known weak spots in how they’re set up — are easier targets than ever. What you want is a system you actually control, built with security first. **Ubiquiti UniFi is that.**
+Everyday routers (Linksys and similar) often have known weak spots in how they’re set up. What you want is a system you actually control, built with security first. **Ubiquiti UniFi is that.**
 
-We move the home onto UniFi — better, more convenient, efficient, and more secure than typical consumer Wi‑Fi — then set up **Home Assistant** so their smart home (and local AI) runs **on their network**, with a **private voice speaker** and their own wake word.
+We move the home onto UniFi — better, more convenient, efficient, and more secure than typical consumer Wi‑Fi — then set up **Home Assistant** as a **private, closed home-automation system** that runs **on their network**, with a **private voice speaker** and their own wake word.
 
 If Amazon (or another cloud) has a big outage, **their house still works**.
 
@@ -36,7 +36,7 @@ They can still keep Alexa or Siri if they want — only as a convenience, not as
 
 ## Why homeowners care (and why you can sell it)
 
-- **AI-era hacking is accelerating** — consumer routers (Linksys, etc.) often have known configuration exploits; you want gear built with security and control in mind
+- **Consumer routers have weak spots** — Linksys and similar often have known configuration exploits; you want gear built with security and control in mind
 - **Ubiquiti UniFi** — more control, cleaner setup, harder target than typical home Wi‑Fi
 - **Harder to hack at home** — separate networks for family, guests, and smart devices (not everything on one flat Wi‑Fi)
 - **Cloud outage proof** — local Home Assistant + private voice keep working if Amazon has a bad day
@@ -59,4 +59,4 @@ They can still keep Alexa or Siri if they want — only as a convenience, not as
 
 ## What to say in one breath
 
-> "AI has made hacking faster and more efficient — and a lot of consumer routers (like Linksys) have known weak spots. We upgrade your home to Ubiquiti UniFi: a better, more convenient, efficient, and secure setup you actually control. Then we use Home Assistant to create your own local AI and smart-home system, with a private voice speaker and your own wake word. It runs inside your home instead of depending on Amazon or another cloud, so your essential automations can keep working during an internet or cloud outage. The pilot is typically about $5,000, and we handle the equipment, setup, and configuration. Cameras and a video doorbell can be added later once we scope them."
+> "Everyday consumer routers like Linksys often have known weak spots. We upgrade your home to Ubiquiti UniFi — a more secure, reliable setup you actually control. Then we set up Home Assistant as a private, closed home-automation system that runs on your network: lights, climate, and routines under your roof, not Amazon’s cloud — with an optional private voice speaker and your own wake word. Essential automations can keep working even during an internet or cloud outage. The pilot is typically about $5,000, and we handle the equipment, setup, and configuration. Cameras and a video doorbell can be added later once we scope them."

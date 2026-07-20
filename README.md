@@ -4,7 +4,7 @@ Private-network smart home infrastructure for San Antonio / Texas Hill Country l
 
 **Offer:** Ubiquiti UniFi networking (UDM Pro console for Wi‑Fi, with room for cameras, doorbell, landline, and local media later), 100% local Home Assistant control, and private voice — with optional bridges to Alexa, Google Assistant, or Siri.
 
-**One-liner:** *AI made hacking faster. You want a system you control, built with security first — Ubiquiti UniFi is that. Your home’s network and local AI stay under your roof; if the cloud goes down, your house keeps working.*
+**One-liner:** *You want a system you control, built with security first — Ubiquiti UniFi is that. Home Assistant runs as private, closed home automation on your network; if the cloud goes down, your house keeps working.*
 
 ## Current focus: Pilot mode
 
@@ -23,9 +23,9 @@ Start here: [sales/pilot-offer.md](sales/pilot-offer.md) · client-facing brief:
 
 ## Why clients switch
 
-- **AI-era security:** hacking is faster and more efficient; consumer routers (Linksys, etc.) often have known configuration exploits — you want gear built for control and security. **Ubiquiti UniFi is that.**
+- **Security-first control:** consumer routers (Linksys, etc.) often have known configuration exploits — you want gear built for control and security. **Ubiquiti UniFi is that.**
 - **Not banned-list consumer gear:** cleaner alternative to flagged/imported consumer Wi‑Fi brands.
-- **Local resilience:** Home Assistant runs on-prem — a big Amazon/Google outage doesn't take the home down.
+- **Local resilience:** Home Assistant runs on-prem as closed home automation — a big Amazon/Google outage doesn't take the home down.
 - **Private voice:** local speakers, not always-on cloud mics; keep Alexa/Siri only as an optional bridge.
 - **One ecosystem later:** Wi‑Fi now; cameras, doorbell, landline, media when scoped.
 
@@ -34,7 +34,7 @@ Start here: [sales/pilot-offer.md](sales/pilot-offer.md) · client-facing brief:
 | Layer | What |
 |-------|------|
 | Pilot (now) | ~$5,000 Private Network & Local Smart Home ($4k–$5.5k wiggle) |
-| Install packages (later) | A (Network), B (Private Smart Home), C (Private AI Estate) |
+| Install packages (later) | A (Network), B (Private Smart Home), C (Advanced Estate — later) |
 | Recurring | Concierge Network & Automation retainer |
 | Channel | Realtor referral partner (not assumed equity) |
 
@@ -62,4 +62,4 @@ Start here: [sales/pilot-offer.md](sales/pilot-offer.md) · client-facing brief:
 - Smart home: Home Assistant OS on dedicated hardware (100% local)
 - Voice: FutureProofHomes Satellite1 + M5Stack Atom Echo (local Assist); Alexa/Siri optional bridge only
 - Remote access: Tailscale or WireGuard (not open HA to the internet)
-- AI: Assist first; local LLM only after network + HA stable 30 days
+- Optional later: advanced on-prem features only after network + HA automations are stable 30 days
